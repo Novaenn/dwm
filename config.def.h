@@ -6,13 +6,13 @@ static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Nerd Font:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Fira Code Nerd Font:size=10", "JoyPixels:pixelsize=10" };
+static const char dmenufont[]       = "Fira Code Nerd Font:size=10";
 
 #include "/home/novaen/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
-static const char *tags[] = { ">_", "www", "{}", "+"};
+static const char *tags[] = { ">_", "www", "{}", "+", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -22,6 +22,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Galculator", NULL,     NULL,       1 << 8,       1,           -1 },
+	{ "Pavucontrol", NULL,    NULL,	      1 << 8,       1,           -1 },
 };
 
 /* layout(s) */
@@ -56,7 +58,8 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,             			XK_a, 	   spawn,          {.v = termcmd } },
+	{ MODKEY,             		XK_a,	   spawn,  	   {.v = termcmd } },
+	{ MODKEY, 			XK_u, 	   spawn,   	   SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -86,6 +89,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 };
