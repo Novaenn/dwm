@@ -25,6 +25,8 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Galculator", NULL,     NULL,       1 << 8,       1,           -1 },
 	{ "Pavucontrol", NULL,    NULL,	      1 << 8,       1,           -1 },
+	/*class       instance    title       tags mask     isfloating   isterminal   monitor */
+	{ "Alacritty", NULL,      NULL,       1 << 8,       0,           1,           -1 }, 
 };
 
 /* layout(s) */
