@@ -1,3 +1,3 @@
 # Novaen's dwm
-My Suckless DWM config, still a work in progress. 
+My Suckless DWM config. 
 https://dwm.suckless.org/
