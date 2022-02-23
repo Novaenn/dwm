@@ -13,7 +13,7 @@ static const char dmenufont[]       = "Fira Code Nerd Font:size=10";
 #include "/home/novaen/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
-static const char *tags[] = {">_","","[]","",""};
+static const char *tags[] = {">_"," ","[]","",""};
 
 static const Rule rules[] = {
 	/* xprop(1):
