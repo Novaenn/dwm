@@ -26,7 +26,7 @@ static const Rule rules[] = {
 	{ "Gimp",          NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",       NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Galculator",    NULL,       NULL,       1 << 8,       1,           -1 },
-	{ "Pavucontrol",   NULL,       NULL,	   1 << 8,       1,           -1 },
+	{ "Pavucontrol",   NULL,       NULL,	     1 << 8,       1,           -1 },
 	/* class           instance    title       tags mask     isfloating   isterminal   monitor */
 	{ "Alacritty",     NULL,       NULL,       1 << 8,       0,           1,           -1 }, 
 	/* class           instance    title       tags mask     isfloating   isterminal  noswallow  monitor */
@@ -61,15 +61,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont};
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *brupcmd[] = { "brightnessctl", "set", "10%+", NULL };
-static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn,          {.v = brupcmd} },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn,          {.v = brdowncmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,             		XK_a,	   spawn,  	   {.v = termcmd } },
+	{ MODKEY,             		      XK_a,	     spawn,  	       {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
