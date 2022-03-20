@@ -29,8 +29,9 @@ static const Rule rules[] = {
 	{ "Pavucontrol",   NULL,       NULL,	     1 << 8,       1,           -1 },
 	/* class           instance    title       tags mask     isfloating   isterminal   monitor */
 	{ "Alacritty",     NULL,       NULL,       1 << 8,       0,           1,           -1 }, 
-	/* class           instance    title       tags mask     isfloating   isterminal  noswallow  monitor */
-	{ NULL,            NULL,       "Event Tester",       1 << 8,       0,           1,0,           -1 }, 
+	/* class           instance    title       					tags mask     isfloating   isterminal  noswallow  monitor */
+	{ NULL,            NULL,       "Event Tester",       1 << 8,       0,           1,  0,           -1 }, 
+	{ NULL,            NULL,       "org.pwmt.zathura",   1 << 8,       0,           1,  0,           -1 }, 
 };
 
 /* layout(s) */
