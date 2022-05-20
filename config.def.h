@@ -15,7 +15,7 @@ static const char dmenufont[]       = "Fira Code Nerd Font:size=10";
 #include <X11/XF86keysym.h>
 
 /* tagging */
-static const char *tags[] = {">_"," ","[]","",""};
+static const char *tags[] = {">_"," ","[]","","",""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -26,8 +26,8 @@ static const Rule rules[] = {
 	{ "Gimp",          NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",       NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Galculator",    NULL,       NULL,       1 << 8,       1,           -1 },
-	{ "Pavucontrol",   NULL,       NULL,	   1 << 8,       1,           -1 },
-	{ "Thunar", 	   NULL, 	   NULL, 	   1 << 8,		 1, 		  -1 },
+	{ "Pavucontrol",   NULL,       NULL,	     1 << 8,       1,           -1 },
+	{ "Thunar", 	     NULL, 	     NULL, 	     1 << 8,		   1, 		      -1 },
 	/* class           instance    title       tags mask     isfloating   isterminal   monitor */
 	{ "Alacritty",     NULL,       NULL,       1 << 8,       0,           1,           -1 }, 
 	/* class           instance    title       					tags mask     isfloating   isterminal  noswallow  monitor */
@@ -61,7 +61,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont};
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL};
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
@@ -98,6 +98,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 };
