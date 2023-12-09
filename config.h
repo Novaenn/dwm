@@ -7,15 +7,15 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Nerd Font:size=10", "JoyPixels:pixelsize=11" };
-static const char dmenufont[]       = "Fira Code Nerd Font:size=10";
+static const char *fonts[]          = { "Fira Code Nerd Font:size=11", "Joypixels:pixelsize=12"};
+static const char dmenufont[]       = "Fira Code Nerd Font:size=11";
 
 #include "/home/novaen/.cache/wal/colors-wal-dwm.h"
 //L'include abilita i tasti per la luminosita dello schermo
 #include <X11/XF86keysym.h>
 
 /* tagging */
-static const char *tags[] = {">_"," ","[]","","",""};
+static const char *tags[] = {"1","2","3","4","5","6"};
 
 static const Rule rules[] = {
 	/* xprop(1):
