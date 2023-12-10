@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL};
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char scratchpadname[] = "scratchpad";
+static const char scratchpadname[] = "Scratchpad";
 static const char *scratchpadcmd[] = { "alacritty", "-T", scratchpadname, "-o", "window.dimensions.lines=34", "-o", "window.dimensions.columns=120", NULL };
 
 static Key keys[] = {
