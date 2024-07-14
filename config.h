@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
@@ -10,7 +10,10 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code Nerd Font:size=11", "Joypixels:pixelsize=12"};
 static const char dmenufont[]       = "Fira Code Nerd Font:size=11";
 
-#include "/home/novaen/.cache/wal/colors-wal-dwm.h"
+//#include "/home/novaen/.cache/wal/colors-wal-dwm.h"
+//#include "/home/novaen/.cache/wal/colorschemes/gruvbox.h"
+#include "/home/novaen/.config/wal/colorschemes/dark/colors-wal-dwm.h"
+
 //L'include abilita i tasti per la luminosità dello schermo
 #include <X11/XF86keysym.h>
 
@@ -26,13 +29,15 @@ static const Rule rules[] = {
 	{ "Gimp",          NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",       NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Galculator",    NULL,       NULL,       1 << 8,       1,           -1 },
-	{ "Pavucontrol",   NULL,       NULL,	     1 << 8,       1,           -1 },
+	{ "pavucontrol",   NULL,       NULL,	     1 << 8,       1,           -1 },
+	{ "Volume Control",NULL,       NULL,	     1 << 8,       1,           -1 },
 	{ "Thunar", 	     NULL, 	     NULL, 	     1 << 8,		   1, 		      -1 },
 	/* class           instance    title       tags mask     isfloating   isterminal   monitor */
 	{ "Alacritty",     NULL,       NULL,       1 << 8,       0,           1,           -1 }, 
 	/* class           instance    title       					tags mask     isfloating   isterminal  noswallow  monitor */
 	{ NULL,            NULL,       "Event Tester",       1 << 8,       0,           1,  0,           -1 }, 
 	{ NULL,            NULL,       "org.pwmt.zathura",   1 << 8,       0,           1,  0,           -1 }, 
+  { NULL,            NULL,       "lf",                 1 << 8,       0,           1,  0,           -1 },
 };
 
 /* layout(s) */
@@ -69,8 +74,8 @@ static const char *scratchpadcmd[] = { "alacritty", "-T", scratchpadname, "-o", 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,             		    XK_a,	   spawn,  	       {.v = termcmd } },
-	{ MODKEY,                       XK_numbersign,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,             		      XK_a,	   	 spawn,  	       {.v = termcmd } },
+	{ MODKEY,                       XK_backslash,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -84,7 +89,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+	/* { MODKEY,                       XK_space,  setlayout,      {0} }, */
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

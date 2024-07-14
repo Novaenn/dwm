@@ -4,5 +4,5 @@ https://dwm.suckless.org/
 
 
 ## Screenshots
-<img src="https://i.imgur.com/8RZOvG8.png">
+<img src="https://imgur.com/VLmJ9Qx">
 <img src="https://i.imgur.com/vwcv4sN.png">
